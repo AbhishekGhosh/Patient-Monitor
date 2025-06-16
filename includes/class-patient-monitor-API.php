@@ -12,23 +12,10 @@ class Patient_Monitor_API {
         ]);
     }
     
-    public static function handle_data($request)
-    {
-        global $wpdb;
-        $table = $wpdb->prefix . 'health_data';
-
-        $data = json_decode($request->get_body(), true);
-
-        $wpdb->insert($table, [
-            'timestamp'  => current_time('mysql'),
-            'ir'         => $data['ir'],
-            'red'        => $data['red'],
-            'glucose'    => $data['glucose'],
-            'heartRateBpm' => $data['heartRateBpm'],
-            'spo2'       => $data['spo2'],
-            'finger'     => $data['finger'] ? 1 : 0
-        ]);
-
-        return new WP_REST_Response(['success' => true], 200);
-    }
+public static function handle_data($request)
+{
+    $data = json_decode($request->get_body(), true);
+    Your_Plugin_Database::insert($data);
+    return new WP_REST_Response(['success' => true], 200);
+}
 }
