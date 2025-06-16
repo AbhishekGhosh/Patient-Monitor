@@ -7,15 +7,15 @@
  */
 
 // Activate plugin (creates table).
-register_activation_hook( __FILE__, ['Your_Plugin_Activator', 'activate'] );
+register_activation_hook( __FILE__, ['Patient_Monitor_Activator', 'activate'] );
 
 // Define plugin directory.
-define( 'YOUR_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'Patient_Monitor_PATH', plugin_dir_path( __FILE__ ) );
 
-require YOUR_PLUGIN_PATH . 'includes/class-your-plugin-activator.php';
-require YOUR_PLUGIN_PATH . 'includes/class-your-plugin-database.php';
-require YOUR_PLUGIN_PATH . 'includes/class-your-plugin-API.php';
-require YOUR_PLUGIN_PATH . 'includes/class-your-plugin-admin.php';
+require YOUR_PLUGIN_PATH . 'includes/class-patient-monitor-activator.php';
+require YOUR_PLUGIN_PATH . 'includes/class-patient-monitor-database.php';
+require YOUR_PLUGIN_PATH . 'includes/class-patient-monitor-API.php';
+require YOUR_PLUGIN_PATH . 'includes/class-patient-monitor-admin.php';
 
-add_action('init', ['Your_Plugin_API', 'register_route']); 
-add_action('admin_menu', ['Your_Plugin_Admin', 'add_menu_page']); 
+add_action('init', ['Patient_Monitor_API', 'register_route']); 
+add_action('admin_menu', ['Patient_Monitor_Admin', 'add_menu_page']); 
