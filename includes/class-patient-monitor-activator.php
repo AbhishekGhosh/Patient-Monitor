@@ -1,7 +1,7 @@
 <?php
 // File: includes/class-your-plugin-activator.php
 
-class Your_Plugin_Activator {
+class Patient_Monitor_Activator {
 
     public static function activate()
     {
